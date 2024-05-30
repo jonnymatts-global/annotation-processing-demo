@@ -1,0 +1,4 @@
+dependencies {
+    implementation project(":example-processor")
+    annotationProcessor project(":example-processor")
+}

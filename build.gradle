@@ -1,0 +1,30 @@
+plugins {
+    id 'org.cyclonedx.bom' version "1.6.1"
+}
+
+subprojects {
+
+    group = 'org.global.owl.annotation.example'
+
+    apply plugin: 'java'
+    apply plugin: 'org.cyclonedx.bom'
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(17)
+        }
+    }
+
+    dependencies {
+        testImplementation platform("org.junit:junit-bom:5.10.0")
+        testImplementation "org.junit.jupiter:junit-jupiter"
+        testImplementation "org.assertj:assertj-core:3.24.2"
+        testImplementation "org.mockito:mockito-junit-jupiter:5.6.0"
+        testImplementation "org.awaitility:awaitility:4.2.0"
+        testImplementation "ch.qos.logback:logback-classic:1.2.11"
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}

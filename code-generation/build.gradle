@@ -1,5 +1,5 @@
 apply plugin: 'java-library'
 
 dependencies {
-    implementation "org.global.owl.annotation:annotation-processing:0.0.0"
+    implementation "org.global.owl.annotation:annotation-processing:1.0.0"
 }

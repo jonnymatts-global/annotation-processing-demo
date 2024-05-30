@@ -1,0 +1,4 @@
+dependencies {
+    implementation project(":code-generation")
+    annotationProcessor project(":code-generation")
+}

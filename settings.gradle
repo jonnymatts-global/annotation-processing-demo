@@ -1,7 +1,7 @@
 rootProject.name = 'annotation-processing-demo'
 
-include "code-gen"
-include "code-gen-demo"
-include "example-processor"
-include "example-processor-demo"
+include "code-generation"
+include "code-generation-demo"
+include "annotation-processing"
+include "annotation-processing-demo"
 

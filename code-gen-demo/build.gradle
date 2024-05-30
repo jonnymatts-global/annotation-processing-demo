@@ -1,4 +1,0 @@
-dependencies {
-    implementation project(":code-gen")
-    annotationProcessor project(":code-gen")
-}

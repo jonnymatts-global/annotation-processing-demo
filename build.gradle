@@ -6,12 +6,29 @@ subprojects {
 
     group = 'org.global.owl.annotation.example'
 
+    apply plugin: 'java-library'
     apply plugin: 'java'
     apply plugin: 'org.cyclonedx.bom'
 
     java {
+        withSourcesJar()
+        withJavadocJar()
         toolchain {
             languageVersion = JavaLanguageVersion.of(17)
+        }
+    }
+
+    tasks.withType(Javadoc).configureEach {
+        options.addStringOption('Xdoclint:none', '-quiet')
+    }
+
+    if (!project.name.endsWith("-demo")) {
+        publishing {
+            publications {
+                maven(MavenPublication) {
+                    from components.java
+                }
+            }
         }
     }
 
